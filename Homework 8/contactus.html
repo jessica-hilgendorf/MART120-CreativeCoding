@@ -25,11 +25,15 @@
             document.getElementById("email").style.backgroundColor="red"
             document.getElementById("email").focus();
         }
-        var yesAnswer = document.getElementById("yesAnswer").value
-        if(yesAnswer == "")
+        var yesAnswer = document.getElementById("yes").value;
+        if(document.getElementById("yes").checked == false)
         {
-            document.getElementById("yesAnswer").style.backgroundColor="red"
-            document.getElementById("yesAnswer").focus();
+            alert("Accepting Terms of Agreement is required to submit.")
+        }
+        var noAnswer = document.getElementById("no").value;
+        if(document.getElementById("no").checked == true)
+        {
+            alert("Accepting Terms of Agreement is required to submit.");
         }
     }
     </script>
@@ -45,8 +49,8 @@
             <span class="asterisk"> &ast;</span><br>
             Do you accept the terms of agreement? 
             <span class="asterisk"> &ast;</span><br>
-            <input type="radio" name="answer" value="yes" required>Yes, I accept.<br>
-            <input type="radio" name="answer" value="no">No, I do not accept.<br>
+            <input type="radio" name="answer" value="yes" id="yes" required> Yes, I accept.<br>
+            <input type="radio" name="answer" value="no" id="no"> No, I do not accept.<br>
             <span class="asterisk">&ast; Required field</span><br>
             <button type="submit" id="buttonSubmit" onClick="formValidation();">Submit</button><br><br>
 
