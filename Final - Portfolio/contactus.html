@@ -1,0 +1,61 @@
+<html>
+    <head>
+    <title>Contact</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script>
+    function formValidation()
+    {
+        var firstName = document.getElementById("fName").value;
+        if(firstName == "")
+        {
+            document.getElementById("fName").style.backgroundColor="red"
+            document.getElementById("fName").focus();
+        }
+        var lastName = document.getElementById("lName").value;
+        if(lastName == "")
+        {
+            document.getElementById("lName").style.backgroundColor="red"
+            document.getElementById("lName").focus();
+        }
+        var email = document.getElementById("email").value;
+        if(email == "")
+        {
+            document.getElementById("email").style.backgroundColor="red"
+            document.getElementById("email").focus();
+        }
+        var yesAnswer = document.getElementById("yes").value;
+        if(document.getElementById("yes").checked == false)
+        {
+            alert("Accepting Terms of Agreement is required to submit.")
+        }
+        var noAnswer = document.getElementById("no").value;
+        if(document.getElementById("no").checked == true)
+        {
+            alert("Accepting Terms of Agreement is required to submit.");
+        }
+    }
+    </script>
+    </head>
+    <body>
+        <h1>Contact Us</h1>
+        <form action="index.html" id="form" type="Post">
+            First Name: <input type="text" id="fName" required>
+            <span class="asterisk"> &ast;</span><br>
+            Last Name: <input type="text" id="lName" required>
+            <span class="asterisk"> &ast;</span><br>
+            Email: <input type="text" id="email" required>
+            <span class="asterisk"> &ast;</span><br>
+            Do you accept the terms of agreement? 
+            <span class="asterisk"> &ast;</span><br>
+            <input type="radio" name="answer" value="yes" id="yes" required> Yes, I accept.<br>
+            <input type="radio" name="answer" value="no" id="no"> No, I do not accept.<br>
+            <span class="asterisk">&ast; Required field</span><br>
+            <button type="submit" id="buttonSubmit" onClick="formValidation();">Submit</button><br><br>
+
+    <a href="secondpage.html">Back to Page 2</a> |
+    <a href="index.html">Back to Homepage</a> |
+    <a href="portfolio.html">Portfolio</a>
+    </body>
+</html>
